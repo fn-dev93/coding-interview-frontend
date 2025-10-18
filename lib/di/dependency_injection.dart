@@ -1,4 +1,3 @@
-import 'package:coding_interview_frontend/core/network/api_client.dart';
 import 'package:coding_interview_frontend/core/network/network.dart';
 import 'package:coding_interview_frontend/currency_exchange/di/di.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class DependencyInjection {
   // Getter to get the instance of the class
   static DependencyInjection get instance => _instance;
 
-  // ✅ ApiClient que se inicializa con el environment
+  // ApiClient que se inicializa con el environment
   static late final ApiClient apiClient;
 
   /// Inicializa el entorno y el ApiClient

@@ -18,6 +18,4 @@ final appRouter = GoRouter(
     // Rest of the feature routes
     ...ExchangeRoutes.routes,
   ],
-
-  // errorBuilder: (context, state) => ErrorPage(error: state.error),
 );
