@@ -1,6 +1,7 @@
 import 'package:coding_interview_frontend/currency_exchange/cubit/currency_exchange_cubit.dart';
 import 'package:coding_interview_frontend/currency_exchange/widget/operation_selector/amount_input.dart';
 import 'package:coding_interview_frontend/currency_exchange/widget/operation_selector/row_selector.dart';
+import 'package:coding_interview_frontend/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -71,20 +72,20 @@ class _OperationSelectorState extends State<OperationSelector> {
             },
           ),
           _RowData(
-            title: 'Tasa estimada',
+            title: AppLocalizations.of(context).estimatedRate,
             value: exchangeRate ?? '0.00',
             currency: state.iWant?.name ?? '',
           ),
           _RowData(
-            title: 'Recibirás',
+            title: AppLocalizations.of(context).youWillReceive,
             value: ((double.tryParse(exchangeRate ?? '0') ?? 0) * amount)
                 .toStringAsFixed(2),
             currency: state.iWant?.name ?? '',
           ),
           _RowData(
-            title: 'Tiempo estimado',
+            title: AppLocalizations.of(context).estimatedTime,
             value: estimatedTime?.toStringAsFixed(2) ?? '0.00',
-            currency: 'Min',
+            currency: AppLocalizations.of(context).min,
           ),
           const SizedBox(height: 20),
           ElevatedButton(
@@ -113,9 +114,9 @@ class _OperationSelectorState extends State<OperationSelector> {
                       strokeWidth: 2,
                     ),
                   )
-                : const Text(
-                    'Continuar',
-                    style: TextStyle(
+                : Text(
+                    AppLocalizations.of(context).continueButton,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),

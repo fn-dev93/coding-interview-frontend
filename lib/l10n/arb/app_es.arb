@@ -3,5 +3,45 @@
     "counterAppBarTitle": "Contador",
     "@counterAppBarTitle": {
         "description": "Texto mostrado en la AppBar de la página del contador"
+    },
+    "estimatedRate": "Tasa estimada",
+    "@estimatedRate": {
+        "description": "Etiqueta para la tasa de cambio estimada"
+    },
+    "youWillReceive": "Recibirás",
+    "@youWillReceive": {
+        "description": "Etiqueta para la cantidad que recibirá el usuario"
+    },
+    "estimatedTime": "Tiempo estimado",
+    "@estimatedTime": {
+        "description": "Etiqueta para el tiempo estimado de transacción"
+    },
+    "continueButton": "Continuar",
+    "@continueButton": {
+        "description": "Texto del botón para continuar el intercambio"
+    },
+    "min": "Min",
+    "@min": {
+        "description": "Abreviatura de minutos"
+    },
+    "amount": "Cantidad",
+    "@amount": {
+        "description": "Texto de sugerencia para el campo de entrada de cantidad"
+    },
+    "iHave": "TENGO",
+    "@iHave": {
+        "description": "Etiqueta para la moneda que tiene el usuario"
+    },
+    "iWant": "QUIERO",
+    "@iWant": {
+        "description": "Etiqueta para la moneda que quiere el usuario"
+    },
+    "error": "Error",
+    "@error": {
+        "description": "Título de error"
+    },
+    "retry": "Reintentar",
+    "@retry": {
+        "description": "Texto del botón para reintentar una acción"
     }
 }

@@ -1,3 +1,4 @@
+import 'package:coding_interview_frontend/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -31,7 +32,7 @@ class _AmountInputState extends State<AmountInput> {
         FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}')),
       ],
       decoration: InputDecoration(
-        hintText: 'Cantidad',
+        hintText: AppLocalizations.of(context).amount,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 12,
           vertical: 4,

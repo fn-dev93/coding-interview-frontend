@@ -2,6 +2,7 @@ import 'package:coding_interview_frontend/currency_exchange/cubit/currency_excha
 import 'package:coding_interview_frontend/currency_exchange/widget/operation_selector/currency_selection_sheet.dart';
 import 'package:coding_interview_frontend/currency_exchange/widget/operation_selector/currency_selector.dart';
 import 'package:coding_interview_frontend/currency_exchange/widget/operation_selector/icon_changer.dart';
+import 'package:coding_interview_frontend/l10n/l10n.dart';
 import 'package:coding_interview_frontend/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,7 +42,7 @@ class RowSelector extends StatelessWidget {
                 ColoredBox(
                   color: Colors.white,
                   child: Text(
-                    'TENGO',
+                    AppLocalizations.of(context).iHave,
                     style: TextStyle(
                       color: Colors.grey.shade700,
                       fontSize: 12,
@@ -52,7 +53,7 @@ class RowSelector extends StatelessWidget {
                 ColoredBox(
                   color: Colors.white,
                   child: Text(
-                    'QUIERO',
+                    AppLocalizations.of(context).iWant,
                     style: TextStyle(
                       color: Colors.grey.shade700,
                       fontSize: 12,

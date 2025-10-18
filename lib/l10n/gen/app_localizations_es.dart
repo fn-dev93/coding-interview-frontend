@@ -13,4 +13,34 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get counterAppBarTitle => 'Contador';
+
+  @override
+  String get estimatedRate => 'Tasa estimada';
+
+  @override
+  String get youWillReceive => 'Recibirás';
+
+  @override
+  String get estimatedTime => 'Tiempo estimado';
+
+  @override
+  String get continueButton => 'Continuar';
+
+  @override
+  String get min => 'Min';
+
+  @override
+  String get amount => 'Cantidad';
+
+  @override
+  String get iHave => 'TENGO';
+
+  @override
+  String get iWant => 'QUIERO';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get retry => 'Reintentar';
 }

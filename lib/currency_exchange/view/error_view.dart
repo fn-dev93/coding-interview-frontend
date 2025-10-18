@@ -1,3 +1,4 @@
+import 'package:coding_interview_frontend/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ErrorView extends StatelessWidget {
@@ -17,7 +18,7 @@ class ErrorView extends StatelessWidget {
           const Icon(Icons.error, size: 64, color: Colors.red),
           const SizedBox(height: 16),
           Text(
-            'Error',
+            AppLocalizations.of(context).error,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 8),
@@ -25,7 +26,7 @@ class ErrorView extends StatelessWidget {
           const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {},
-            child: const Text('Reintentar'),
+            child: Text(AppLocalizations.of(context).retry),
           ),
         ],
       ),

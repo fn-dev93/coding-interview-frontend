@@ -102,6 +102,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Counter'**
   String get counterAppBarTitle;
+
+  /// Label for estimated exchange rate
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated Rate'**
+  String get estimatedRate;
+
+  /// Label for amount user will receive
+  ///
+  /// In en, this message translates to:
+  /// **'You will receive'**
+  String get youWillReceive;
+
+  /// Label for estimated transaction time
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated Time'**
+  String get estimatedTime;
+
+  /// Button text to continue the exchange
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueButton;
+
+  /// Abbreviation for minutes
+  ///
+  /// In en, this message translates to:
+  /// **'Min'**
+  String get min;
+
+  /// Hint text for amount input field
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get amount;
+
+  /// Label for currency user has
+  ///
+  /// In en, this message translates to:
+  /// **'I HAVE'**
+  String get iHave;
+
+  /// Label for currency user wants
+  ///
+  /// In en, this message translates to:
+  /// **'I WANT'**
+  String get iWant;
+
+  /// Error title
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// Button text to retry an action
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

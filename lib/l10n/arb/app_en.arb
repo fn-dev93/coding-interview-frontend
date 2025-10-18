@@ -3,5 +3,45 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "estimatedRate": "Estimated Rate",
+    "@estimatedRate": {
+        "description": "Label for estimated exchange rate"
+    },
+    "youWillReceive": "You will receive",
+    "@youWillReceive": {
+        "description": "Label for amount user will receive"
+    },
+    "estimatedTime": "Estimated Time",
+    "@estimatedTime": {
+        "description": "Label for estimated transaction time"
+    },
+    "continueButton": "Continue",
+    "@continueButton": {
+        "description": "Button text to continue the exchange"
+    },
+    "min": "Min",
+    "@min": {
+        "description": "Abbreviation for minutes"
+    },
+    "amount": "Amount",
+    "@amount": {
+        "description": "Hint text for amount input field"
+    },
+    "iHave": "I HAVE",
+    "@iHave": {
+        "description": "Label for currency user has"
+    },
+    "iWant": "I WANT",
+    "@iWant": {
+        "description": "Label for currency user wants"
+    },
+    "error": "Error",
+    "@error": {
+        "description": "Error title"
+    },
+    "retry": "Retry",
+    "@retry": {
+        "description": "Button text to retry an action"
     }
 }
