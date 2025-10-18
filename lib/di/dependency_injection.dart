@@ -20,7 +20,6 @@ class DependencyInjection {
 
   /// Inicializa el entorno y el ApiClient
   static void initialize({required Environment env}) {
-
     // Crear ApiClient con la configuración del environment
     apiClient = ApiClient(
       baseUrl: env.baseUrl,

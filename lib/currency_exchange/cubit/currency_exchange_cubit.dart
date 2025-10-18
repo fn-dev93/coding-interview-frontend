@@ -10,7 +10,7 @@ part 'currency_exchange_state.dart';
 /// It handles fetching exchange rates, setting assets, and inverting
 /// selections.
 class CurrencyExchangeCubit extends Cubit<CurrencyExchangeState> {
-  /// Creates a [CurrencyExchangeCubit] with the required [getExchangeRate] 
+  /// Creates a [CurrencyExchangeCubit] with the required [getExchangeRate]
   /// use case.
   CurrencyExchangeCubit({
     required this.getExchangeRate,

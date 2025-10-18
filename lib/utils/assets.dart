@@ -76,7 +76,7 @@ class FiatCurrency extends Assets {
     pen,
     ves,
   ];
-  
+
   @override
   String get runtimeTypeString => 'Fiat';
 }
