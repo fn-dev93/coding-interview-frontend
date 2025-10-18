@@ -21,8 +21,8 @@ ImageData _$ImageDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ImageData {
-  BadgeImage get badge => throw _privateConstructorUsedError;
-  CardImage get card => throw _privateConstructorUsedError;
+  CardImage? get card => throw _privateConstructorUsedError;
+  BadgeImage? get badge => throw _privateConstructorUsedError;
 
   /// Serializes this ImageData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,10 +39,10 @@ abstract class $ImageDataCopyWith<$Res> {
   factory $ImageDataCopyWith(ImageData value, $Res Function(ImageData) then) =
       _$ImageDataCopyWithImpl<$Res, ImageData>;
   @useResult
-  $Res call({BadgeImage badge, CardImage card});
+  $Res call({CardImage? card, BadgeImage? badge});
 
-  $BadgeImageCopyWith<$Res> get badge;
-  $CardImageCopyWith<$Res> get card;
+  $CardImageCopyWith<$Res>? get card;
+  $BadgeImageCopyWith<$Res>? get badge;
 }
 
 /// @nodoc
@@ -59,17 +59,17 @@ class _$ImageDataCopyWithImpl<$Res, $Val extends ImageData>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? badge = null, Object? card = null}) {
+  $Res call({Object? card = freezed, Object? badge = freezed}) {
     return _then(
       _value.copyWith(
-            badge: null == badge
-                ? _value.badge
-                : badge // ignore: cast_nullable_to_non_nullable
-                      as BadgeImage,
-            card: null == card
+            card: freezed == card
                 ? _value.card
                 : card // ignore: cast_nullable_to_non_nullable
-                      as CardImage,
+                      as CardImage?,
+            badge: freezed == badge
+                ? _value.badge
+                : badge // ignore: cast_nullable_to_non_nullable
+                      as BadgeImage?,
           )
           as $Val,
     );
@@ -79,9 +79,13 @@ class _$ImageDataCopyWithImpl<$Res, $Val extends ImageData>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $BadgeImageCopyWith<$Res> get badge {
-    return $BadgeImageCopyWith<$Res>(_value.badge, (value) {
-      return _then(_value.copyWith(badge: value) as $Val);
+  $CardImageCopyWith<$Res>? get card {
+    if (_value.card == null) {
+      return null;
+    }
+
+    return $CardImageCopyWith<$Res>(_value.card!, (value) {
+      return _then(_value.copyWith(card: value) as $Val);
     });
   }
 
@@ -89,9 +93,13 @@ class _$ImageDataCopyWithImpl<$Res, $Val extends ImageData>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CardImageCopyWith<$Res> get card {
-    return $CardImageCopyWith<$Res>(_value.card, (value) {
-      return _then(_value.copyWith(card: value) as $Val);
+  $BadgeImageCopyWith<$Res>? get badge {
+    if (_value.badge == null) {
+      return null;
+    }
+
+    return $BadgeImageCopyWith<$Res>(_value.badge!, (value) {
+      return _then(_value.copyWith(badge: value) as $Val);
     });
   }
 }
@@ -105,12 +113,12 @@ abstract class _$$ImageDataImplCopyWith<$Res>
   ) = __$$ImageDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({BadgeImage badge, CardImage card});
+  $Res call({CardImage? card, BadgeImage? badge});
 
   @override
-  $BadgeImageCopyWith<$Res> get badge;
+  $CardImageCopyWith<$Res>? get card;
   @override
-  $CardImageCopyWith<$Res> get card;
+  $BadgeImageCopyWith<$Res>? get badge;
 }
 
 /// @nodoc
@@ -126,17 +134,17 @@ class __$$ImageDataImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? badge = null, Object? card = null}) {
+  $Res call({Object? card = freezed, Object? badge = freezed}) {
     return _then(
       _$ImageDataImpl(
-        badge: null == badge
-            ? _value.badge
-            : badge // ignore: cast_nullable_to_non_nullable
-                  as BadgeImage,
-        card: null == card
+        card: freezed == card
             ? _value.card
             : card // ignore: cast_nullable_to_non_nullable
-                  as CardImage,
+                  as CardImage?,
+        badge: freezed == badge
+            ? _value.badge
+            : badge // ignore: cast_nullable_to_non_nullable
+                  as BadgeImage?,
       ),
     );
   }
@@ -145,19 +153,19 @@ class __$$ImageDataImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ImageDataImpl implements _ImageData {
-  const _$ImageDataImpl({required this.badge, required this.card});
+  const _$ImageDataImpl({this.card, this.badge});
 
   factory _$ImageDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$ImageDataImplFromJson(json);
 
   @override
-  final BadgeImage badge;
+  final CardImage? card;
   @override
-  final CardImage card;
+  final BadgeImage? badge;
 
   @override
   String toString() {
-    return 'ImageData(badge: $badge, card: $card)';
+    return 'ImageData(card: $card, badge: $badge)';
   }
 
   @override
@@ -165,13 +173,13 @@ class _$ImageDataImpl implements _ImageData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ImageDataImpl &&
-            (identical(other.badge, badge) || other.badge == badge) &&
-            (identical(other.card, card) || other.card == card));
+            (identical(other.card, card) || other.card == card) &&
+            (identical(other.badge, badge) || other.badge == badge));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, badge, card);
+  int get hashCode => Object.hash(runtimeType, card, badge);
 
   /// Create a copy of ImageData
   /// with the given fields replaced by the non-null parameter values.
@@ -188,18 +196,16 @@ class _$ImageDataImpl implements _ImageData {
 }
 
 abstract class _ImageData implements ImageData {
-  const factory _ImageData({
-    required final BadgeImage badge,
-    required final CardImage card,
-  }) = _$ImageDataImpl;
+  const factory _ImageData({final CardImage? card, final BadgeImage? badge}) =
+      _$ImageDataImpl;
 
   factory _ImageData.fromJson(Map<String, dynamic> json) =
       _$ImageDataImpl.fromJson;
 
   @override
-  BadgeImage get badge;
+  CardImage? get card;
   @override
-  CardImage get card;
+  BadgeImage? get badge;
 
   /// Create a copy of ImageData
   /// with the given fields replaced by the non-null parameter values.

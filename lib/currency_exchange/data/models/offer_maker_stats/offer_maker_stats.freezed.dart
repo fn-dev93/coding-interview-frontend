@@ -36,7 +36,9 @@ mixin _$OfferMakerStats {
   double get marketMakerSuccessRatio => throw _privateConstructorUsedError;
   Score get mmScore => throw _privateConstructorUsedError;
   Score get mtScore => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_lastSeen')
   String get userLastSeen => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_status')
   String get userStatus => throw _privateConstructorUsedError;
 
   /// Serializes this OfferMakerStats to a JSON map.
@@ -72,8 +74,8 @@ abstract class $OfferMakerStatsCopyWith<$Res> {
     double marketMakerSuccessRatio,
     Score mmScore,
     Score mtScore,
-    String userLastSeen,
-    String userStatus,
+    @JsonKey(name: 'user_lastSeen') String userLastSeen,
+    @JsonKey(name: 'user_status') String userStatus,
   });
 
   $ScoreCopyWith<$Res> get mmScore;
@@ -234,8 +236,8 @@ abstract class _$$OfferMakerStatsImplCopyWith<$Res>
     double marketMakerSuccessRatio,
     Score mmScore,
     Score mtScore,
-    String userLastSeen,
-    String userStatus,
+    @JsonKey(name: 'user_lastSeen') String userLastSeen,
+    @JsonKey(name: 'user_status') String userStatus,
   });
 
   @override
@@ -370,8 +372,8 @@ class _$OfferMakerStatsImpl implements _OfferMakerStats {
     required this.marketMakerSuccessRatio,
     required this.mmScore,
     required this.mtScore,
-    required this.userLastSeen,
-    required this.userStatus,
+    @JsonKey(name: 'user_lastSeen') required this.userLastSeen,
+    @JsonKey(name: 'user_status') required this.userStatus,
   });
 
   factory _$OfferMakerStatsImpl.fromJson(Map<String, dynamic> json) =>
@@ -408,8 +410,10 @@ class _$OfferMakerStatsImpl implements _OfferMakerStats {
   @override
   final Score mtScore;
   @override
+  @JsonKey(name: 'user_lastSeen')
   final String userLastSeen;
   @override
+  @JsonKey(name: 'user_status')
   final String userStatus;
 
   @override
@@ -521,8 +525,8 @@ abstract class _OfferMakerStats implements OfferMakerStats {
     required final double marketMakerSuccessRatio,
     required final Score mmScore,
     required final Score mtScore,
-    required final String userLastSeen,
-    required final String userStatus,
+    @JsonKey(name: 'user_lastSeen') required final String userLastSeen,
+    @JsonKey(name: 'user_status') required final String userStatus,
   }) = _$OfferMakerStatsImpl;
 
   factory _OfferMakerStats.fromJson(Map<String, dynamic> json) =
@@ -559,8 +563,10 @@ abstract class _OfferMakerStats implements OfferMakerStats {
   @override
   Score get mtScore;
   @override
+  @JsonKey(name: 'user_lastSeen')
   String get userLastSeen;
   @override
+  @JsonKey(name: 'user_status')
   String get userStatus;
 
   /// Create a copy of OfferMakerStats

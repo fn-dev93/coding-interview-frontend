@@ -6,15 +6,8 @@ part of 'flags.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FlagsImpl _$$FlagsImplFromJson(Map<String, dynamic> json) => _$FlagsImpl(
-  canOperateWithNewUsers: json['canOperateWithNewUsers'] as bool,
-  isExpressCapable: json['isExpressCapable'] as bool?,
-  isNewUser: json['isNewUser'] as bool?,
-);
+_$FlagsImpl _$$FlagsImplFromJson(Map<String, dynamic> json) =>
+    _$FlagsImpl(isNewUser: json['isNewUser'] as bool? ?? false);
 
 Map<String, dynamic> _$$FlagsImplToJson(_$FlagsImpl instance) =>
-    <String, dynamic>{
-      'canOperateWithNewUsers': instance.canOperateWithNewUsers,
-      'isExpressCapable': instance.isExpressCapable,
-      'isNewUser': instance.isNewUser,
-    };
+    <String, dynamic>{'isNewUser': instance.isNewUser};

@@ -11,15 +11,14 @@ part 'tier.g.dart';
 @freezed
 class Tier with _$Tier {
   const factory Tier({
-    required ImageData image,
     required RateLimit rateLimit,
     required ColorData color,
     required String nameCode,
-    required bool isOfferCardVisible,
     required LocalizedText name,
     required Flags flags,
     required LocalizedText description,
     required LocalizedText recommendation,
+    ImageData? image,
     double? minScore,
     bool? isBadgeVisible,
     double? maxScore,

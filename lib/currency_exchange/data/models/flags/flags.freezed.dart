@@ -21,9 +21,7 @@ Flags _$FlagsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Flags {
-  bool get canOperateWithNewUsers => throw _privateConstructorUsedError;
-  bool? get isExpressCapable => throw _privateConstructorUsedError;
-  bool? get isNewUser => throw _privateConstructorUsedError;
+  bool get isNewUser => throw _privateConstructorUsedError;
 
   /// Serializes this Flags to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,11 +37,7 @@ abstract class $FlagsCopyWith<$Res> {
   factory $FlagsCopyWith(Flags value, $Res Function(Flags) then) =
       _$FlagsCopyWithImpl<$Res, Flags>;
   @useResult
-  $Res call({
-    bool canOperateWithNewUsers,
-    bool? isExpressCapable,
-    bool? isNewUser,
-  });
+  $Res call({bool isNewUser});
 }
 
 /// @nodoc
@@ -60,25 +54,13 @@ class _$FlagsCopyWithImpl<$Res, $Val extends Flags>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? canOperateWithNewUsers = null,
-    Object? isExpressCapable = freezed,
-    Object? isNewUser = freezed,
-  }) {
+  $Res call({Object? isNewUser = null}) {
     return _then(
       _value.copyWith(
-            canOperateWithNewUsers: null == canOperateWithNewUsers
-                ? _value.canOperateWithNewUsers
-                : canOperateWithNewUsers // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            isExpressCapable: freezed == isExpressCapable
-                ? _value.isExpressCapable
-                : isExpressCapable // ignore: cast_nullable_to_non_nullable
-                      as bool?,
-            isNewUser: freezed == isNewUser
+            isNewUser: null == isNewUser
                 ? _value.isNewUser
                 : isNewUser // ignore: cast_nullable_to_non_nullable
-                      as bool?,
+                      as bool,
           )
           as $Val,
     );
@@ -93,11 +75,7 @@ abstract class _$$FlagsImplCopyWith<$Res> implements $FlagsCopyWith<$Res> {
   ) = __$$FlagsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    bool canOperateWithNewUsers,
-    bool? isExpressCapable,
-    bool? isNewUser,
-  });
+  $Res call({bool isNewUser});
 }
 
 /// @nodoc
@@ -113,25 +91,13 @@ class __$$FlagsImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? canOperateWithNewUsers = null,
-    Object? isExpressCapable = freezed,
-    Object? isNewUser = freezed,
-  }) {
+  $Res call({Object? isNewUser = null}) {
     return _then(
       _$FlagsImpl(
-        canOperateWithNewUsers: null == canOperateWithNewUsers
-            ? _value.canOperateWithNewUsers
-            : canOperateWithNewUsers // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        isExpressCapable: freezed == isExpressCapable
-            ? _value.isExpressCapable
-            : isExpressCapable // ignore: cast_nullable_to_non_nullable
-                  as bool?,
-        isNewUser: freezed == isNewUser
+        isNewUser: null == isNewUser
             ? _value.isNewUser
             : isNewUser // ignore: cast_nullable_to_non_nullable
-                  as bool?,
+                  as bool,
       ),
     );
   }
@@ -140,25 +106,18 @@ class __$$FlagsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$FlagsImpl implements _Flags {
-  const _$FlagsImpl({
-    required this.canOperateWithNewUsers,
-    this.isExpressCapable,
-    this.isNewUser,
-  });
+  const _$FlagsImpl({this.isNewUser = false});
 
   factory _$FlagsImpl.fromJson(Map<String, dynamic> json) =>
       _$$FlagsImplFromJson(json);
 
   @override
-  final bool canOperateWithNewUsers;
-  @override
-  final bool? isExpressCapable;
-  @override
-  final bool? isNewUser;
+  @JsonKey()
+  final bool isNewUser;
 
   @override
   String toString() {
-    return 'Flags(canOperateWithNewUsers: $canOperateWithNewUsers, isExpressCapable: $isExpressCapable, isNewUser: $isNewUser)';
+    return 'Flags(isNewUser: $isNewUser)';
   }
 
   @override
@@ -166,22 +125,13 @@ class _$FlagsImpl implements _Flags {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FlagsImpl &&
-            (identical(other.canOperateWithNewUsers, canOperateWithNewUsers) ||
-                other.canOperateWithNewUsers == canOperateWithNewUsers) &&
-            (identical(other.isExpressCapable, isExpressCapable) ||
-                other.isExpressCapable == isExpressCapable) &&
             (identical(other.isNewUser, isNewUser) ||
                 other.isNewUser == isNewUser));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    canOperateWithNewUsers,
-    isExpressCapable,
-    isNewUser,
-  );
+  int get hashCode => Object.hash(runtimeType, isNewUser);
 
   /// Create a copy of Flags
   /// with the given fields replaced by the non-null parameter values.
@@ -198,20 +148,12 @@ class _$FlagsImpl implements _Flags {
 }
 
 abstract class _Flags implements Flags {
-  const factory _Flags({
-    required final bool canOperateWithNewUsers,
-    final bool? isExpressCapable,
-    final bool? isNewUser,
-  }) = _$FlagsImpl;
+  const factory _Flags({final bool isNewUser}) = _$FlagsImpl;
 
   factory _Flags.fromJson(Map<String, dynamic> json) = _$FlagsImpl.fromJson;
 
   @override
-  bool get canOperateWithNewUsers;
-  @override
-  bool? get isExpressCapable;
-  @override
-  bool? get isNewUser;
+  bool get isNewUser;
 
   /// Create a copy of Flags
   /// with the given fields replaced by the non-null parameter values.

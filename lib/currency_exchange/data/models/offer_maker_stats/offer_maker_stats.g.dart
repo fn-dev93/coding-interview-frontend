@@ -26,8 +26,8 @@ _$OfferMakerStatsImpl _$$OfferMakerStatsImplFromJson(
   marketMakerSuccessRatio: (json['marketMakerSuccessRatio'] as num).toDouble(),
   mmScore: Score.fromJson(json['mmScore'] as Map<String, dynamic>),
   mtScore: Score.fromJson(json['mtScore'] as Map<String, dynamic>),
-  userLastSeen: json['userLastSeen'] as String,
-  userStatus: json['userStatus'] as String,
+  userLastSeen: json['user_lastSeen'] as String,
+  userStatus: json['user_status'] as String,
 );
 
 Map<String, dynamic> _$$OfferMakerStatsImplToJson(
@@ -48,6 +48,6 @@ Map<String, dynamic> _$$OfferMakerStatsImplToJson(
   'marketMakerSuccessRatio': instance.marketMakerSuccessRatio,
   'mmScore': instance.mmScore,
   'mtScore': instance.mtScore,
-  'userLastSeen': instance.userLastSeen,
-  'userStatus': instance.userStatus,
+  'user_lastSeen': instance.userLastSeen,
+  'user_status': instance.userStatus,
 };

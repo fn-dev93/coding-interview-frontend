@@ -14,7 +14,7 @@ class ExchangeRepositoryImpl implements ExchangeRepository {
     required double amount,
     required String amountCurrencyId,
   }) async {
-    final response = await apiClient.get<ExchangeResponse>(
+    final response = await apiClient.get<Map<String, dynamic>>(
       '/orderbook/public/recommendations',
       queryParameters: {
         'type': type,
@@ -27,7 +27,7 @@ class ExchangeRepositoryImpl implements ExchangeRepository {
     if (response.statusCode == 200) {
       final data = response.data;
       if (data != null) {
-        return data;
+        return ExchangeResponse.fromJson(data);
       } else {
         throw Exception('Invalid response format');
       }

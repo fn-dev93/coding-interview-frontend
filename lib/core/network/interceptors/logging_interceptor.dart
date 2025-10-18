@@ -5,11 +5,9 @@ import 'package:flutter/foundation.dart';
 class LoggingInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    if (kDebugMode) {
-      print('🌐 REQUEST[${options.method}] => PATH: ${options.path}');
-      print('Headers: ${options.headers}');
-      print('Data: ${options.data}');
-    }
+    debugPrint('🌐 REQUEST[${options.method}] => PATH: ${options.path}');
+    debugPrint('Headers: ${options.headers}');
+    debugPrint('Data: ${options.data}');
     super.onRequest(options, handler);
   }
 
@@ -18,26 +16,23 @@ class LoggingInterceptor extends Interceptor {
     Response<dynamic> response,
     ResponseInterceptorHandler handler,
   ) {
-    if (kDebugMode) {
-      print(
-        '✅ RESPONSE[${response.statusCode}] => '
-        'PATH: ${response.requestOptions.path}',
-      );
-      print('Data: ${response.data}');
-    }
+    debugPrint(
+      '✅ RESPONSE[${response.statusCode}] => '
+      'PATH: ${response.requestOptions.path}',
+    );
+    debugPrint('Data: ${response.data}');
+
     super.onResponse(response, handler);
   }
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    if (kDebugMode) {
-      print(
-        '❌ ERROR[${err.response?.statusCode}] => '
-        'PATH: ${err.requestOptions.path}',
-      );
-      print('Message: ${err.message}');
-      print('Response: ${err.response?.data}');
-    }
+    debugPrint(
+      '❌ ERROR[${err.response?.statusCode}] => '
+      'PATH: ${err.requestOptions.path}',
+    );
+    debugPrint('Message: ${err.message}');
+    debugPrint('Response: ${err.response?.data}');
     super.onError(err, handler);
   }
 }

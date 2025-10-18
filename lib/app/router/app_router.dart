@@ -1,5 +1,3 @@
-// lib/app/routes/app_router.dart
-
 import 'package:coding_interview_frontend/app/router/app_router_observer.dart';
 import 'package:coding_interview_frontend/currency_exchange/routes/routes.dart';
 import 'package:go_router/go_router.dart';

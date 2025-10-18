@@ -8,8 +8,8 @@ part 'image_data.g.dart';
 @freezed
 class ImageData with _$ImageData {
   const factory ImageData({
-    required BadgeImage badge,
-    required CardImage card,
+    CardImage? card,
+    BadgeImage? badge,
   }) = _ImageData;
 
   factory ImageData.fromJson(Map<String, dynamic> json) =>

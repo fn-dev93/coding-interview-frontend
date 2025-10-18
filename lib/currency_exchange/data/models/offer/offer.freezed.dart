@@ -41,7 +41,9 @@ mixin _$Offer {
   List<String> get paymentMethods => throw _privateConstructorUsedError;
   String get usdRate => throw _privateConstructorUsedError;
   bool get paused => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_status')
   String get userStatus => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_lastSeen')
   String get userLastSeen => throw _privateConstructorUsedError;
   bool get display => throw _privateConstructorUsedError;
   String get visibility => throw _privateConstructorUsedError;
@@ -86,8 +88,8 @@ abstract class $OfferCopyWith<$Res> {
     List<String> paymentMethods,
     String usdRate,
     bool paused,
-    String userStatus,
-    String userLastSeen,
+    @JsonKey(name: 'user_status') String userStatus,
+    @JsonKey(name: 'user_lastSeen') String userLastSeen,
     bool display,
     String visibility,
     List<String> paymentMethodFilter,
@@ -330,8 +332,8 @@ abstract class _$$OfferImplCopyWith<$Res> implements $OfferCopyWith<$Res> {
     List<String> paymentMethods,
     String usdRate,
     bool paused,
-    String userStatus,
-    String userLastSeen,
+    @JsonKey(name: 'user_status') String userStatus,
+    @JsonKey(name: 'user_lastSeen') String userLastSeen,
     bool display,
     String visibility,
     List<String> paymentMethodFilter,
@@ -540,8 +542,8 @@ class _$OfferImpl implements _Offer {
     required final List<String> paymentMethods,
     required this.usdRate,
     required this.paused,
-    required this.userStatus,
-    required this.userLastSeen,
+    @JsonKey(name: 'user_status') required this.userStatus,
+    @JsonKey(name: 'user_lastSeen') required this.userLastSeen,
     required this.display,
     required this.visibility,
     required final List<String> paymentMethodFilter,
@@ -602,8 +604,10 @@ class _$OfferImpl implements _Offer {
   @override
   final bool paused;
   @override
+  @JsonKey(name: 'user_status')
   final String userStatus;
   @override
+  @JsonKey(name: 'user_lastSeen')
   final String userLastSeen;
   @override
   final bool display;
@@ -773,8 +777,8 @@ abstract class _Offer implements Offer {
     required final List<String> paymentMethods,
     required final String usdRate,
     required final bool paused,
-    required final String userStatus,
-    required final String userLastSeen,
+    @JsonKey(name: 'user_status') required final String userStatus,
+    @JsonKey(name: 'user_lastSeen') required final String userLastSeen,
     required final bool display,
     required final String visibility,
     required final List<String> paymentMethodFilter,
@@ -827,8 +831,10 @@ abstract class _Offer implements Offer {
   @override
   bool get paused;
   @override
+  @JsonKey(name: 'user_status')
   String get userStatus;
   @override
+  @JsonKey(name: 'user_lastSeen')
   String get userLastSeen;
   @override
   bool get display;

@@ -1,4 +1,4 @@
-import 'package:coding_interview_frontend/core/errors/failures.dart';
+import 'package:coding_interview_frontend/core/errors/errors.dart';
 import 'package:coding_interview_frontend/currency_exchange/data/models/models.dart';
 import 'package:coding_interview_frontend/currency_exchange/domain/repositories/exchange_repository.dart';
 import 'package:coding_interview_frontend/currency_exchange/domain/usecases/usecase.dart';
@@ -15,17 +15,24 @@ class GetExchangeRate extends UseCase<void, GetExchangeRateParams> {
     GetExchangeRateParams params,
   ) async {
     try {
+      // final result = await repository.getExchangeRate(
+      //   type: params.type,
+      //   cryptoCurrencyId: params.cryptoCurrencyId,
+      //   fiatCurrencyId: params.fiatCurrencyId,
+      //   amount: params.amount,
+      //   amountCurrencyId: params.amountCurrencyId,
+      // );
       final result = await repository.getExchangeRate(
-        type: params.type,
-        cryptoCurrencyId: params.cryptoCurrencyId,
-        fiatCurrencyId: params.fiatCurrencyId,
-        amount: params.amount,
-        amountCurrencyId: params.amountCurrencyId,
+        type: 1,
+        cryptoCurrencyId: 'TATUM-TRON-USDT',
+        fiatCurrencyId: 'BRL',
+        amount: 100,
+        amountCurrencyId: '',
       );
 
       return Right(result);
     } on Exception catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(ExceptionHandler.handleException(e));
     }
   }
 }

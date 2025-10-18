@@ -1,53 +1,57 @@
 part of 'currency_exchange_cubit.dart';
 
-/// Represents the various states of the currency exchange feature 
-/// in the application.
-/// This sealed class ensures exhaustive pattern matching for state handling.
-sealed class CurrencyExchangeState extends Equatable {
-  const CurrencyExchangeState();
+enum CurrencyExchangeStatus {
+  initial,
+  loading,
+  loaded,
+  error;
 
-  @override
-  List<Object> get props => [];
+  bool get isInitial => this == CurrencyExchangeStatus.initial;
+  bool get isLoading => this == CurrencyExchangeStatus.loading;
+  bool get isLoaded => this == CurrencyExchangeStatus.loaded;
+  bool get isError => this == CurrencyExchangeStatus.error;
 }
 
-/// The initial state of the currency exchange cubit 
-/// before any operation starts.
-final class CurrencyExchangeInitial extends CurrencyExchangeState {}
+class CurrencyExchangeState extends Equatable {
+  const CurrencyExchangeState({
+    this.status = CurrencyExchangeStatus.initial,
+    this.exchangeResponse,
+    this.errorMessage,
+    this.iHave,
+    this.iWant,
+  });
 
-/// The state indicating that a currency exchange operation is in progress.
-final class CurrencyExchangeLoading extends CurrencyExchangeState {}
+  final CurrencyExchangeStatus status;
+  final ExchangeResponse? exchangeResponse;
+  final String? errorMessage;
+  final Assets? iHave;
+  final Assets? iWant;
 
-/// The state representing an error that occurred during a 
-/// currency exchange operation.
-final class CurrencyExchangeError extends CurrencyExchangeState {
-  const CurrencyExchangeError(this.message);
-
-  /// The error message describing what went wrong.
-  final String message;
-
-  @override
-  List<Object> get props => [message];
-}
-
-/// The state when the list of available currencies 
-/// has been successfully loaded.
-final class CurrencyExchangeCurrenciesLoaded extends CurrencyExchangeState {
-  const CurrencyExchangeCurrenciesLoaded(this.currencies);
-
-  /// The list of available currency codes.
-  final List<String> currencies;
-
-  @override
-  List<Object> get props => [currencies];
-}
-
-/// The state when the exchange rate data has been successfully loaded.
-final class CurrencyExchangeRateLoaded extends CurrencyExchangeState {
-  const CurrencyExchangeRateLoaded(this.exchangeResponse);
-
-  /// The response object containing the exchange rate information.
-  final Object exchangeResponse;
+  CurrencyExchangeState copyWith({
+    CurrencyExchangeStatus? status,
+    ExchangeResponse? exchangeResponse,
+    String? errorMessage,
+    Assets? iHave,
+    Assets? iWant,
+    bool resetExchangeResponse = false,
+  }) {
+    return CurrencyExchangeState(
+      status: status ?? this.status,
+      exchangeResponse: resetExchangeResponse
+          ? null
+          : exchangeResponse ?? this.exchangeResponse,
+      errorMessage: errorMessage ?? this.errorMessage,
+      iHave: iHave ?? this.iHave,
+      iWant: iWant ?? this.iWant,
+    );
+  }
 
   @override
-  List<Object> get props => [exchangeResponse];
+  List<Object?> get props => [
+    status,
+    exchangeResponse,
+    errorMessage,
+    iHave,
+    iWant,
+  ];
 }

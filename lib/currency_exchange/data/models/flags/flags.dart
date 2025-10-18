@@ -6,9 +6,7 @@ part 'flags.g.dart';
 @freezed
 class Flags with _$Flags {
   const factory Flags({
-    required bool canOperateWithNewUsers,
-    bool? isExpressCapable,
-    bool? isNewUser,
+    @Default(false) bool isNewUser,
   }) = _Flags;
 
   factory Flags.fromJson(Map<String, dynamic> json) => _$FlagsFromJson(json);

@@ -21,15 +21,14 @@ Tier _$TierFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Tier {
-  ImageData get image => throw _privateConstructorUsedError;
   RateLimit get rateLimit => throw _privateConstructorUsedError;
   ColorData get color => throw _privateConstructorUsedError;
   String get nameCode => throw _privateConstructorUsedError;
-  bool get isOfferCardVisible => throw _privateConstructorUsedError;
   LocalizedText get name => throw _privateConstructorUsedError;
   Flags get flags => throw _privateConstructorUsedError;
   LocalizedText get description => throw _privateConstructorUsedError;
   LocalizedText get recommendation => throw _privateConstructorUsedError;
+  ImageData? get image => throw _privateConstructorUsedError;
   double? get minScore => throw _privateConstructorUsedError;
   bool? get isBadgeVisible => throw _privateConstructorUsedError;
   double? get maxScore => throw _privateConstructorUsedError;
@@ -49,27 +48,26 @@ abstract class $TierCopyWith<$Res> {
       _$TierCopyWithImpl<$Res, Tier>;
   @useResult
   $Res call({
-    ImageData image,
     RateLimit rateLimit,
     ColorData color,
     String nameCode,
-    bool isOfferCardVisible,
     LocalizedText name,
     Flags flags,
     LocalizedText description,
     LocalizedText recommendation,
+    ImageData? image,
     double? minScore,
     bool? isBadgeVisible,
     double? maxScore,
   });
 
-  $ImageDataCopyWith<$Res> get image;
   $RateLimitCopyWith<$Res> get rateLimit;
   $ColorDataCopyWith<$Res> get color;
   $LocalizedTextCopyWith<$Res> get name;
   $FlagsCopyWith<$Res> get flags;
   $LocalizedTextCopyWith<$Res> get description;
   $LocalizedTextCopyWith<$Res> get recommendation;
+  $ImageDataCopyWith<$Res>? get image;
 }
 
 /// @nodoc
@@ -87,25 +85,20 @@ class _$TierCopyWithImpl<$Res, $Val extends Tier>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image = null,
     Object? rateLimit = null,
     Object? color = null,
     Object? nameCode = null,
-    Object? isOfferCardVisible = null,
     Object? name = null,
     Object? flags = null,
     Object? description = null,
     Object? recommendation = null,
+    Object? image = freezed,
     Object? minScore = freezed,
     Object? isBadgeVisible = freezed,
     Object? maxScore = freezed,
   }) {
     return _then(
       _value.copyWith(
-            image: null == image
-                ? _value.image
-                : image // ignore: cast_nullable_to_non_nullable
-                      as ImageData,
             rateLimit: null == rateLimit
                 ? _value.rateLimit
                 : rateLimit // ignore: cast_nullable_to_non_nullable
@@ -118,10 +111,6 @@ class _$TierCopyWithImpl<$Res, $Val extends Tier>
                 ? _value.nameCode
                 : nameCode // ignore: cast_nullable_to_non_nullable
                       as String,
-            isOfferCardVisible: null == isOfferCardVisible
-                ? _value.isOfferCardVisible
-                : isOfferCardVisible // ignore: cast_nullable_to_non_nullable
-                      as bool,
             name: null == name
                 ? _value.name
                 : name // ignore: cast_nullable_to_non_nullable
@@ -138,6 +127,10 @@ class _$TierCopyWithImpl<$Res, $Val extends Tier>
                 ? _value.recommendation
                 : recommendation // ignore: cast_nullable_to_non_nullable
                       as LocalizedText,
+            image: freezed == image
+                ? _value.image
+                : image // ignore: cast_nullable_to_non_nullable
+                      as ImageData?,
             minScore: freezed == minScore
                 ? _value.minScore
                 : minScore // ignore: cast_nullable_to_non_nullable
@@ -153,16 +146,6 @@ class _$TierCopyWithImpl<$Res, $Val extends Tier>
           )
           as $Val,
     );
-  }
-
-  /// Create a copy of Tier
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ImageDataCopyWith<$Res> get image {
-    return $ImageDataCopyWith<$Res>(_value.image, (value) {
-      return _then(_value.copyWith(image: value) as $Val);
-    });
   }
 
   /// Create a copy of Tier
@@ -224,6 +207,20 @@ class _$TierCopyWithImpl<$Res, $Val extends Tier>
       return _then(_value.copyWith(recommendation: value) as $Val);
     });
   }
+
+  /// Create a copy of Tier
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ImageDataCopyWith<$Res>? get image {
+    if (_value.image == null) {
+      return null;
+    }
+
+    return $ImageDataCopyWith<$Res>(_value.image!, (value) {
+      return _then(_value.copyWith(image: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -235,22 +232,19 @@ abstract class _$$TierImplCopyWith<$Res> implements $TierCopyWith<$Res> {
   @override
   @useResult
   $Res call({
-    ImageData image,
     RateLimit rateLimit,
     ColorData color,
     String nameCode,
-    bool isOfferCardVisible,
     LocalizedText name,
     Flags flags,
     LocalizedText description,
     LocalizedText recommendation,
+    ImageData? image,
     double? minScore,
     bool? isBadgeVisible,
     double? maxScore,
   });
 
-  @override
-  $ImageDataCopyWith<$Res> get image;
   @override
   $RateLimitCopyWith<$Res> get rateLimit;
   @override
@@ -263,6 +257,8 @@ abstract class _$$TierImplCopyWith<$Res> implements $TierCopyWith<$Res> {
   $LocalizedTextCopyWith<$Res> get description;
   @override
   $LocalizedTextCopyWith<$Res> get recommendation;
+  @override
+  $ImageDataCopyWith<$Res>? get image;
 }
 
 /// @nodoc
@@ -277,25 +273,20 @@ class __$$TierImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image = null,
     Object? rateLimit = null,
     Object? color = null,
     Object? nameCode = null,
-    Object? isOfferCardVisible = null,
     Object? name = null,
     Object? flags = null,
     Object? description = null,
     Object? recommendation = null,
+    Object? image = freezed,
     Object? minScore = freezed,
     Object? isBadgeVisible = freezed,
     Object? maxScore = freezed,
   }) {
     return _then(
       _$TierImpl(
-        image: null == image
-            ? _value.image
-            : image // ignore: cast_nullable_to_non_nullable
-                  as ImageData,
         rateLimit: null == rateLimit
             ? _value.rateLimit
             : rateLimit // ignore: cast_nullable_to_non_nullable
@@ -308,10 +299,6 @@ class __$$TierImplCopyWithImpl<$Res>
             ? _value.nameCode
             : nameCode // ignore: cast_nullable_to_non_nullable
                   as String,
-        isOfferCardVisible: null == isOfferCardVisible
-            ? _value.isOfferCardVisible
-            : isOfferCardVisible // ignore: cast_nullable_to_non_nullable
-                  as bool,
         name: null == name
             ? _value.name
             : name // ignore: cast_nullable_to_non_nullable
@@ -328,6 +315,10 @@ class __$$TierImplCopyWithImpl<$Res>
             ? _value.recommendation
             : recommendation // ignore: cast_nullable_to_non_nullable
                   as LocalizedText,
+        image: freezed == image
+            ? _value.image
+            : image // ignore: cast_nullable_to_non_nullable
+                  as ImageData?,
         minScore: freezed == minScore
             ? _value.minScore
             : minScore // ignore: cast_nullable_to_non_nullable
@@ -349,15 +340,14 @@ class __$$TierImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TierImpl implements _Tier {
   const _$TierImpl({
-    required this.image,
     required this.rateLimit,
     required this.color,
     required this.nameCode,
-    required this.isOfferCardVisible,
     required this.name,
     required this.flags,
     required this.description,
     required this.recommendation,
+    this.image,
     this.minScore,
     this.isBadgeVisible,
     this.maxScore,
@@ -367,15 +357,11 @@ class _$TierImpl implements _Tier {
       _$$TierImplFromJson(json);
 
   @override
-  final ImageData image;
-  @override
   final RateLimit rateLimit;
   @override
   final ColorData color;
   @override
   final String nameCode;
-  @override
-  final bool isOfferCardVisible;
   @override
   final LocalizedText name;
   @override
@@ -385,6 +371,8 @@ class _$TierImpl implements _Tier {
   @override
   final LocalizedText recommendation;
   @override
+  final ImageData? image;
+  @override
   final double? minScore;
   @override
   final bool? isBadgeVisible;
@@ -393,7 +381,7 @@ class _$TierImpl implements _Tier {
 
   @override
   String toString() {
-    return 'Tier(image: $image, rateLimit: $rateLimit, color: $color, nameCode: $nameCode, isOfferCardVisible: $isOfferCardVisible, name: $name, flags: $flags, description: $description, recommendation: $recommendation, minScore: $minScore, isBadgeVisible: $isBadgeVisible, maxScore: $maxScore)';
+    return 'Tier(rateLimit: $rateLimit, color: $color, nameCode: $nameCode, name: $name, flags: $flags, description: $description, recommendation: $recommendation, image: $image, minScore: $minScore, isBadgeVisible: $isBadgeVisible, maxScore: $maxScore)';
   }
 
   @override
@@ -401,20 +389,18 @@ class _$TierImpl implements _Tier {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TierImpl &&
-            (identical(other.image, image) || other.image == image) &&
             (identical(other.rateLimit, rateLimit) ||
                 other.rateLimit == rateLimit) &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.nameCode, nameCode) ||
                 other.nameCode == nameCode) &&
-            (identical(other.isOfferCardVisible, isOfferCardVisible) ||
-                other.isOfferCardVisible == isOfferCardVisible) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.flags, flags) || other.flags == flags) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.recommendation, recommendation) ||
                 other.recommendation == recommendation) &&
+            (identical(other.image, image) || other.image == image) &&
             (identical(other.minScore, minScore) ||
                 other.minScore == minScore) &&
             (identical(other.isBadgeVisible, isBadgeVisible) ||
@@ -427,15 +413,14 @@ class _$TierImpl implements _Tier {
   @override
   int get hashCode => Object.hash(
     runtimeType,
-    image,
     rateLimit,
     color,
     nameCode,
-    isOfferCardVisible,
     name,
     flags,
     description,
     recommendation,
+    image,
     minScore,
     isBadgeVisible,
     maxScore,
@@ -457,15 +442,14 @@ class _$TierImpl implements _Tier {
 
 abstract class _Tier implements Tier {
   const factory _Tier({
-    required final ImageData image,
     required final RateLimit rateLimit,
     required final ColorData color,
     required final String nameCode,
-    required final bool isOfferCardVisible,
     required final LocalizedText name,
     required final Flags flags,
     required final LocalizedText description,
     required final LocalizedText recommendation,
+    final ImageData? image,
     final double? minScore,
     final bool? isBadgeVisible,
     final double? maxScore,
@@ -474,15 +458,11 @@ abstract class _Tier implements Tier {
   factory _Tier.fromJson(Map<String, dynamic> json) = _$TierImpl.fromJson;
 
   @override
-  ImageData get image;
-  @override
   RateLimit get rateLimit;
   @override
   ColorData get color;
   @override
   String get nameCode;
-  @override
-  bool get isOfferCardVisible;
   @override
   LocalizedText get name;
   @override
@@ -491,6 +471,8 @@ abstract class _Tier implements Tier {
   LocalizedText get description;
   @override
   LocalizedText get recommendation;
+  @override
+  ImageData? get image;
   @override
   double? get minScore;
   @override

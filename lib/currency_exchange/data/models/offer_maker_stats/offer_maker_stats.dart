@@ -22,8 +22,8 @@ class OfferMakerStats with _$OfferMakerStats {
     required double marketMakerSuccessRatio,
     required Score mmScore,
     required Score mtScore,
-    required String userLastSeen,
-    required String userStatus,
+    @JsonKey(name: 'user_lastSeen') required String userLastSeen,
+    @JsonKey(name: 'user_status') required String userStatus,
   }) = _OfferMakerStats;
 
   factory OfferMakerStats.fromJson(Map<String, dynamic> json) =>

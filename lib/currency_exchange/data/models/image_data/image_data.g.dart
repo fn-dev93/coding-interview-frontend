@@ -8,9 +8,13 @@ part of 'image_data.dart';
 
 _$ImageDataImpl _$$ImageDataImplFromJson(Map<String, dynamic> json) =>
     _$ImageDataImpl(
-      badge: BadgeImage.fromJson(json['badge'] as Map<String, dynamic>),
-      card: CardImage.fromJson(json['card'] as Map<String, dynamic>),
+      card: json['card'] == null
+          ? null
+          : CardImage.fromJson(json['card'] as Map<String, dynamic>),
+      badge: json['badge'] == null
+          ? null
+          : BadgeImage.fromJson(json['badge'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$ImageDataImplToJson(_$ImageDataImpl instance) =>
-    <String, dynamic>{'badge': instance.badge, 'card': instance.card};
+    <String, dynamic>{'card': instance.card, 'badge': instance.badge};
